@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CRUD
@@ -28,13 +20,13 @@ namespace CRUD
         {
             try
             {
-                Inicio.Conect Rodar = new Inicio.Conect();
+                Conectar.Conect Rodar = new Conectar.Conect();
 
                 string strSql = @"insert Prestador ( RazaoSocial, CNPJ , IM  , CnaeId  , Municipio)
                 values ( " + "'" + RazaoSocial.Text + "'"
-                                + "," + CNPJ.Text
-                                + "," + IM.Text
-                                + "," + CNAE.Text
+                                + "," + "'" + CNPJ.Text + "'"
+                                + "," + "'" + IM.Text + "'"
+                                + "," + "'" + CNAE.Text + "'"
                                 + "," + CodIBGE.Text + ")";
 
                 SqlCommand comando = new SqlCommand(strSql);
@@ -55,28 +47,19 @@ namespace CRUD
                 MessageBox.Show("Os campos não podem estar em branco ou com dados inválidos \n" + exception.Message);
 
             }
-         
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                Inicio.Conect Rodar = new Inicio.Conect();
+                Conectar.Conect Rodar = new Conectar.Conect();
 
-                /* SELECT   select * from Prestador where 
-                                                            RazaoSocial =  'SÃO PAULO' 
-                                                            OR CNPJ = '12.945.116/0001-82' 
-                                                            OR IM = '8'
-                                                            OR CnaeId = '77777' 
-                                                            OR Municipio = '12334'   */
-
-                string strSql = @"select  * from Prestador were  
-                                        RazaoSocial =" + RazaoSocial.Text
-                                        + "OR CNPJ =" + CNPJ.Text
-                                        + " OR IM =" + IM.Text 
-                                        + "OR CnaeId =" + CNAE.Text
-                                        + "OR Municipio =" + CodIBGE.Text ;
+                string strSql = @"select  * from Prestador where RazaoSocial like '%" + RazaoSocial.Text + "%\'"
+                                        + " OR CNPJ like '%" + CNPJ.Text + "%\'"
+                                        + "  OR IM like '%" + IM.Text + "%\'"
+                                        + " OR CnaeId like '%" + CNAE.Text + "%\'"
+                                        + "OR Municipio like '%" + CodIBGE.Text + "%\'";
 
                 SqlCommand comando = new SqlCommand(strSql);
 
@@ -84,11 +67,18 @@ namespace CRUD
 
                 SqlDataReader reader = comando.ExecuteReader();
 
+                reader.Read();
+                RazaoSocial.Text = reader[0].ToString();
+                CNPJ.Text = reader[1].ToString();
+                IM.Text = reader[2].ToString();
+                CNAE.Text = reader[3].ToString();
+                CodIBGE.Text = reader[4].ToString();
+                reader.Close();
                 Rodar.Fechar();
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Os campos não podem estar em branco ou com dados inválidos \n" + exception.Message);
+                MessageBox.Show("Nenhum Prestador encontrado \n" + exception.Message);
             }
         }
     }

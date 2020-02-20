@@ -38,9 +38,9 @@
             this.CNAE = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CodIBGE = new System.Windows.Forms.TextBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // RazaoSocial
@@ -123,15 +123,15 @@
             this.CodIBGE.Size = new System.Drawing.Size(200, 20);
             this.CodIBGE.TabIndex = 8;
             // 
-            // btnSalvar
+            // btnAdicionar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(86, 59);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 10;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnAdicionar.Location = new System.Drawing.Point(86, 59);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionar.TabIndex = 10;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // BtnBuscar
             // 
@@ -143,24 +143,25 @@
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnSair
             // 
-            this.button2.Location = new System.Drawing.Point(334, 59);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Sair";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSair.Location = new System.Drawing.Point(334, 59);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(75, 23);
+            this.btnSair.TabIndex = 12;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.button2_Click);
             // 
             // Prestador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(506, 384);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.BtnBuscar);
-            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CodIBGE);
             this.Controls.Add(this.label4);
@@ -191,8 +192,8 @@
         private System.Windows.Forms.TextBox CNAE;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CodIBGE;
-        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button BtnBuscar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSair;
     }
 }

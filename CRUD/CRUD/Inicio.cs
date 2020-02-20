@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.SqlServer.Server;
+using static CRUD.Conectar;
 
 namespace CRUD
 {
     public partial class Inicio : Form
     {
-        public class Conect
+
+   
+  /*      public class Conect
         {
-            SqlConnection conexao = new SqlConnection(@"Data Source = INVENT018\B1; Initial Catalog = SBO_TaxOne; User Id = sa; Password=sap@123");
+            SqlConnection conexao = new SqlConnection(@"Data Source = INVENT018; Initial Catalog = SBO_TaxOne; User Id = sa; Password=sap@123");
             public SqlConnection conectar()
             {
                 conexao.Open();
@@ -27,8 +21,9 @@ namespace CRUD
             {
                 conexao.Close();
             }
-        }
+        }           */
 
+     
         public Inicio()
         {
             InitializeComponent();

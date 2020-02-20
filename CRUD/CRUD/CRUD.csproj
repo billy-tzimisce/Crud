@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conect.cs" />
     <Compile Include="SqlCons.cs">
       <SubType>Form</SubType>
     </Compile>
